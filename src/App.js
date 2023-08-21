@@ -36,10 +36,12 @@ function App() {
           </p>
         </div>
       ) : (
-        <div>
-          <p>{weatherData.name}</p>
-          <p>{Math.round(weatherData.main.temp)}°F</p>
-          <p>{weatherData.weather[0].main}</p>
+        <div className="weather-content">
+          <p className="city">{weatherData.name}</p>
+          <p className="temp">
+            {Math.round(((weatherData.main.temp - 32) * 5) / 9)}°C
+          </p>
+          <p className="weather">{weatherData.weather[0].main}</p>
         </div>
       )}
     </div>
